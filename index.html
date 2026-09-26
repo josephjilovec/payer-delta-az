@@ -57,6 +57,17 @@
     }
     .grid { display: grid; gap: 12px; }
     @media (min-width: 640px) { .grid.two { grid-template-columns: 1fr 1fr; } }
+    .moat-grid { display: grid; gap: 22px; align-items: center; }
+    .moat-copy { min-width: 0; }
+    .moat-copy p { color: var(--muted); font-size: 16px; }
+    .moat-copy p + p { margin-top: 12px; }
+    .moat-callout { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--text); font-size: 15px; }
+    .moat-image { position: relative; overflow: hidden; border: 1px solid var(--line); background: #111318; min-height: 220px; }
+    .moat-image img { display: block; width: 100%; height: 100%; min-height: 220px; object-fit: cover; filter: saturate(.72) contrast(1.04); }
+    .moat-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,20,25,.08), rgba(15,20,25,.28)); pointer-events: none; }
+    .photo-credit { margin-top: 7px; font-size: 11px; color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; }
+    .photo-credit a { color: var(--muted); text-decoration: none; }
+    @media (min-width: 640px) { .moat-grid { grid-template-columns: .95fr 1.05fr; } }
     .card {
       background: var(--card);
       border: 1px solid var(--line);
@@ -119,6 +130,23 @@
         <li>Same IDs every week so the file is comparable</li>
         <li>Sent on a schedule. If the file is wrong, that week is on us</li>
       </ul>
+    </section>
+
+    <section>
+      <div class="moat-grid">
+        <div class="moat-copy">
+          <h2>Why it’s not just a weekly spreadsheet</h2>
+          <p>Your team could pull these sources themselves. The value is the recurring system around them: keeping the same sources and identifiers on a weekly baseline, comparing what changed, and separating signal from the raw data.</p>
+          <p>Payer Delta turns that monitoring work into a short operational brief instead of another research task on someone’s list.</p>
+          <div class="moat-callout"><strong>You get the signal. Your team decides what to do with it.</strong></div>
+        </div>
+        <div>
+          <div class="moat-image">
+            <img src="https://images.pexels.com/photos/37828832/pexels-photo-37828832.jpeg?cs=srgb&dl=pexels-alfredo-lau-tam-1776631537-37828832.jpg&fm=jpg" alt="Professional analyzing data across multiple screens" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-credit">Illustrative image · Pexels / Alfredo Lau-Tam</div>
+        </div>
+      </div>
     </section>
 
     <section>
