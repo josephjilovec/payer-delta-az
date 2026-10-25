@@ -3,196 +3,724 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Payer Delta Arizona — Daily payer intelligence. Weekly revenue-integrity brief.</title>
-  <meta name="description" content="Daily public-source monitoring for Arizona RCM teams, distilled into a concise weekly revenue-integrity brief. Sample week free. Then $297–$497/mo." />
+  <title>Payer Delta — Automated Denial Management &amp; Internal Appeal Execution</title>
+  <meta name="description" content="Automated denial management and internal appeal execution for medical billing teams. Eliminate denial backlogs by matching denial codes, extracting policy citations, assembling chart notes, and generating structured internal appeal packets." />
+  <meta name="keywords" content="Payer Delta, automated denial management, internal appeal execution, medical billing automation, healthcare RCM, CARC RARC appeal packets, policy citation extraction, clinical chart assembly" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://payerdelta.josephjilovec.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Payer Delta" />
+  <meta property="og:title" content="Payer Delta — Automated Denial Management &amp; Internal Appeal Execution" />
+  <meta property="og:description" content="An automated workflow engine designed to eliminate denial backlogs. Match denial codes, extract policy citations, assemble chart notes, and generate structured internal appeal packets." />
+  <meta property="og:url" content="https://payerdelta.josephjilovec.com/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Payer Delta — Automated Denial Management &amp; Internal Appeal Execution" />
+  <meta name="twitter:description" content="Automated denial management and internal appeal execution for medical billing teams." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Payer Delta",
+    "url": "https://payerdelta.josephjilovec.com/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "An automated workflow engine designed to eliminate denial backlogs. Payer Delta integrates directly with billing pipelines to match denial codes, extract policy citations, assemble chart notes, and generate structured internal appeal packets.",
+    "creator": {
+      "@type": "Organization",
+      "name": "Joseph Jilovec Venture Studio",
+      "url": "https://josephjilovec.com"
+    }
+  }
+  </script>
+
   <style>
     :root {
-      --bg: #0f1419;
-      --card: #1a222c;
-      --line: #2a3542;
-      --text: #e8eef4;
-      --muted: #8b9aab;
+      --bg: #0c1116;
+      --bg-elevated: #121922;
+      --card: #161f2a;
+      --card-hover: #1b2633;
+      --line: #263342;
+      --line-strong: #35475b;
+      --text: #edf2f7;
+      --muted: #93a3b5;
       --accent: #c4a574;
-      --accent-dim: #8a734d;
+      --accent-dim: rgba(196, 165, 116, 0.22);
+      --signal: #3fa7a3;
+      --signal-soft: rgba(63, 167, 163, 0.14);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 14% 0%, rgba(63, 167, 163, 0.09), transparent 38%),
+        radial-gradient(circle at 88% 8%, rgba(196, 165, 116, 0.08), transparent 36%),
+        var(--bg);
       color: var(--text);
-      line-height: 1.55;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 28px 22px 64px; }
-    header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 56px; }
-    .brand { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-family: ui-sans-serif, system-ui, sans-serif; }
-    .meta { font-size: 12px; color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; }
-    h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px; }
-    .lede { font-size: 18px; color: var(--muted); max-width: 38em; margin-bottom: 28px; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 56px; }
-    a.btn {
-      display: inline-block;
-      padding: 12px 18px;
-      border-radius: 2px;
-      text-decoration: none;
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-size: 14px;
-      letter-spacing: 0.02em;
+
+    .wrap {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
     }
-    .btn-primary { background: var(--accent); color: #1a140c; }
-    .btn-ghost { border: 1px solid var(--line); color: var(--text); }
-    section { margin-bottom: 40px; }
-    h2 {
-      font-family: ui-sans-serif, system-ui, sans-serif;
+
+    /* Header */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 24px;
+      margin-bottom: 64px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 12px var(--signal);
+    }
+
+    .brand {
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .meta {
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 72px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 11px;
+      font-weight: 600;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 14px;
+      padding: 6px 12px;
+      border: 1px solid var(--accent-dim);
+      background: rgba(196, 165, 116, 0.06);
+      border-radius: 2px;
+      margin-bottom: 22px;
     }
-    ul { list-style: none; }
-    li {
-      padding: 10px 0;
-      border-top: 1px solid var(--line);
+
+    h1 {
+      font-size: clamp(34px, 5.2vw, 56px);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      max-width: 18.5ch;
+      margin-bottom: 22px;
+    }
+
+    .lede {
+      font-size: clamp(18px, 2.1vw, 21px);
+      color: var(--muted);
+      max-width: 44em;
+      line-height: 1.58;
+      margin-bottom: 32px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+
+    a.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 2px;
+      text-decoration: none;
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #14100a;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: #d3b688;
+      border-color: #d3b688;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--line-strong);
+      background: rgba(22, 31, 42, 0.55);
       color: var(--text);
     }
-    .grid { display: grid; gap: 12px; }
-    @media (min-width: 640px) { .grid.two { grid-template-columns: 1fr 1fr; } }
-    .moat-grid { display: grid; gap: 22px; align-items: center; }
-    .moat-copy { min-width: 0; }
-    .moat-copy p { color: var(--muted); font-size: 16px; }
-    .moat-copy p + p { margin-top: 12px; }
-    .moat-callout { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--text); font-size: 15px; }
-    .moat-image { position: relative; overflow: hidden; border: 1px solid var(--line); background: #111318; min-height: 220px; }
-    .moat-image img { display: block; width: 100%; height: 100%; min-height: 220px; object-fit: cover; filter: saturate(.72) contrast(1.04); }
-    .moat-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,20,25,.08), rgba(15,20,25,.28)); pointer-events: none; }
-    .photo-credit { margin-top: 7px; font-size: 11px; color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; }
-    .photo-credit a { color: var(--muted); text-decoration: none; }
-    @media (min-width: 640px) { .moat-grid { grid-template-columns: .95fr 1.05fr; } }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .btn-link {
+      padding: 13px 14px;
+      color: var(--muted);
+      border: 1px solid transparent;
+    }
+
+    .btn-link:hover {
+      color: var(--text);
+    }
+
+    /* Pipeline ribbon */
+    .flow-ribbon {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 14px;
+      padding: 16px 20px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--line);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .flow-ribbon span.stage-pill {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .flow-ribbon span.stage-num {
+      color: var(--signal);
+      margin-right: 5px;
+    }
+
+    .flow-ribbon span.arrow {
+      color: var(--accent);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 68px;
+    }
+
+    .section-header {
+      margin-bottom: 26px;
+    }
+
+    h2.eyebrow {
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(25px, 3.5vw, 36px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      max-width: 28ch;
+    }
+
+    /* 4-Step Execution Pipeline Grid */
+    .pipeline-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) {
+      .pipeline-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 980px) {
+      .pipeline-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .pipeline-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 22px 20px 20px;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+
+    .pipeline-card:hover {
+      background: var(--card-hover);
+      border-color: var(--line-strong);
+      transform: translateY(-2px);
+    }
+
+    .pipeline-top {
+      margin-bottom: 20px;
+    }
+
+    .step-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .step-badge {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+
+    .step-tag {
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .pipeline-card h3 {
+      font-size: 21px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .pipeline-card p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.56;
+    }
+
+    .step-output {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 11px;
+      color: var(--signal);
+      background: var(--signal-soft);
+      border: 1px solid rgba(63, 167, 163, 0.28);
+      padding: 6px 10px;
+      align-self: flex-start;
+    }
+
+    /* Operational Focus */
+    .focus-grid {
+      display: grid;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    @media (min-width: 800px) {
+      .focus-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .focus-panel {
+      background: linear-gradient(160deg, rgba(22, 31, 42, 0.95), rgba(15, 22, 30, 0.95));
+      border: 1px solid var(--line);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .focus-panel p.focus-copy {
+      font-size: clamp(18px, 2vw, 21px);
+      color: var(--text);
+      line-height: 1.58;
+      margin-top: 8px;
+    }
+
+    .focus-panel p.focus-sub {
+      margin-top: 16px;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .packet-spec {
+      background: var(--bg-elevated);
+      border: 1px solid var(--line);
+      padding: 26px 24px;
+    }
+
+    .packet-spec-title {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--signal);
+      margin-bottom: 16px;
+    }
+
+    .packet-list {
+      list-style: none;
+    }
+
+    .packet-list li {
+      padding: 11px 0;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .packet-list li span.label {
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-weight: 500;
+    }
+
+    .packet-list li span.detail {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 11px;
+      text-align: right;
+    }
+
+    /* Audience / Operational Fit Grid */
+    .grid-two {
+      display: grid;
+      gap: 16px;
+    }
+
+    @media (min-width: 680px) {
+      .grid-two {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     .card {
       background: var(--card);
       border: 1px solid var(--line);
-      padding: 18px 16px;
+      padding: 22px 20px;
     }
-    .card strong { display: block; margin-bottom: 6px; font-weight: 500; }
-    .card p { color: var(--muted); font-size: 15px; }
-    .price { font-size: 22px; margin-bottom: 8px; }
-    .steps { counter-reset: step; }
-    .steps li { counter-increment: step; padding-left: 36px; position: relative; }
-    .steps li::before {
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 22px;
-      height: 22px;
-      border: 1px solid var(--accent-dim);
-      color: var(--accent);
-      font-size: 12px;
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+
+    .card strong {
+      display: block;
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin-bottom: 8px;
     }
-    footer {
-      margin-top: 48px;
-      padding-top: 20px;
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.56;
+    }
+
+    /* Closing CTA */
+    .closing-section {
+      padding-top: 44px;
       border-top: 1px solid var(--line);
+      margin-bottom: 48px;
+    }
+
+    .closing-line {
+      font-size: clamp(28px, 4.4vw, 42px);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      max-width: 20ch;
+      margin-bottom: 16px;
+    }
+
+    .closing-copy {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 42em;
+      margin-bottom: 28px;
+    }
+
+    /* Footer */
+    footer {
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 13px;
       color: var(--muted);
-      font-family: ui-sans-serif, system-ui, sans-serif;
     }
-    footer a { color: var(--accent); }
-    .closing-section { margin-top: 18px; padding-top: 30px; border-top: 1px solid var(--line); }
-    .closing-line { font-size: clamp(27px, 5vw, 38px); line-height: 1.18; letter-spacing: -0.02em; max-width: 16em; margin-bottom: 16px; }
-    .closing-copy { color: var(--muted); font-size: 17px; max-width: 38em; margin-bottom: 24px; }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">Payer Delta Arizona</div>
-      <div class="meta">Arizona AI Advisors · Mesa</div>
+      <div class="brand-group">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand">Payer Delta</span>
+      </div>
+      <div class="meta">Healthcare RCM &amp; Operational Automation</div>
     </header>
 
-    <h1>A daily watch on the changes that can hit Arizona RCM.</h1>
-    <p class="lede">
-      Payer Delta monitors public payer, CMS, AHCCCS, MAC, and hospital pricing sources every day,
-      then distills the meaningful changes into one concise weekly brief. You get the signal without
-      building another internal monitoring job. Not an AI audit. Not a billing takeover.
-    </p>
-    <div class="actions">
-      <a class="btn btn-primary" href="mailto:realjjemail@gmail.com?subject=PD-AZ%20sample%20request">Request a sample brief</a>
-      <a class="btn btn-ghost" href="https://calendar.app.google/TqcgNrw1Q7ddAnTF8">Book 15 minutes</a>
-    </div>
+    <main>
+      <section class="hero">
+        <div class="kicker">Internal Appeal Execution Engine</div>
+        <h1>Automated denial management and internal appeal execution for medical billing teams.</h1>
+        <p class="lede">
+          An automated workflow engine designed to eliminate denial backlogs. Payer Delta integrates
+          directly with billing pipelines to match denial codes, extract policy citations, assemble
+          chart notes, and generate structured internal appeal packets.
+        </p>
 
-    <section>
-      <h2>What you get</h2>
-      <ul>
-        <li>Daily source watch across payer, CMS, AHCCCS, MAC, and hospital pricing pages</li>
-        <li>One concise weekly brief: what changed, what may matter, what deserves a look</li>
-        <li>Stable IDs and source history so a change is a change, not a new spreadsheet</li>
-        <li>Public sources only. No PHI. Your team keeps the decision</li>
-      </ul>
-    </section>
-
-    <section>
-      <div class="moat-grid">
-        <div class="moat-copy">
-          <h2>Why this earns a place in the workflow</h2>
-          <p>Your IT guy can build a scraper. Your analyst can build a spreadsheet. Your biller can keep opening tabs. The hard part is staying on it, knowing what changed, and getting the useful part in front of the right person.</p>
-          <p>Payer Delta is the outside watch. I keep the source list, check the moving pieces, and turn the noise into a short operating brief. Your team decides what to do with it.</p>
-          <div class="moat-callout"><strong>You are not buying more information. You’re buying a reliable extra set of eyes.</strong></div>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:realjjemail@gmail.com?subject=Payer%20Delta%20%E2%80%94%20Workflow%20Walkthrough">Request Workflow Walkthrough</a>
+          <a class="btn btn-ghost" href="https://calendar.app.google/TqcgNrw1Q7ddAnTF8" target="_blank" rel="noreferrer">Book 15 Minutes</a>
+          <a class="btn btn-link" href="#pipeline">View 4-Step Pipeline ↓</a>
         </div>
-        <div>
-          <div class="moat-image">
-            <img src="Me%20at%20computer%20desk.jpg" alt="JJ working on a client project" loading="lazy" decoding="async" />
+
+        <div class="flow-ribbon" aria-label="Four-step execution pipeline overview">
+          <span class="stage-pill"><span class="stage-num">01</span>Denial Matching</span>
+          <span class="arrow" aria-hidden="true">→</span>
+          <span class="stage-pill"><span class="stage-num">02</span>Policy Extraction</span>
+          <span class="arrow" aria-hidden="true">→</span>
+          <span class="stage-pill"><span class="stage-num">03</span>Chart Assembly</span>
+          <span class="arrow" aria-hidden="true">→</span>
+          <span class="stage-pill"><span class="stage-num">04</span>Appeal Generation</span>
+        </div>
+      </section>
+
+      <section id="pipeline">
+        <div class="section-header">
+          <h2 class="eyebrow">Execution Pipeline</h2>
+          <p class="section-title">From raw remittance denial to citation-backed internal appeal packet.</p>
+        </div>
+
+        <div class="pipeline-grid">
+          <article class="pipeline-card">
+            <div class="pipeline-top">
+              <div class="step-meta">
+                <span class="step-badge">STEP 01</span>
+                <span class="step-tag">Queue Intake</span>
+              </div>
+              <h3>Denial Matching</h3>
+              <p>
+                Ingests 835/ERA remittance streams and billing workqueues to map CARC/RARC reason codes,
+                CPT/HCPCS modifiers, payer rules, and timely-filing deadlines.
+              </p>
+            </div>
+            <span class="step-output">→ Classified Denial Profile</span>
+          </article>
+
+          <article class="pipeline-card">
+            <div class="pipeline-top">
+              <div class="step-meta">
+                <span class="step-badge">STEP 02</span>
+                <span class="step-tag">Coverage Logic</span>
+              </div>
+              <h3>Policy Extraction</h3>
+              <p>
+                Cross-references denied service lines against active CMS LCD/NCD guidelines, NCCI edits,
+                and commercial payer medical policies to pull exact reconsideration criteria.
+              </p>
+            </div>
+            <span class="step-output">→ Verified Policy Citations</span>
+          </article>
+
+          <article class="pipeline-card">
+            <div class="pipeline-top">
+              <div class="step-meta">
+                <span class="step-badge">STEP 03</span>
+                <span class="step-tag">Clinical Context</span>
+              </div>
+              <h3>Chart Assembly</h3>
+              <p>
+                Retrieves and indexes relevant encounter documentation, operative notes, diagnostic findings,
+                and prior-authorization records mapped directly to each cited policy rule.
+              </p>
+            </div>
+            <span class="step-output">→ Mapped Chart Excerpts</span>
+          </article>
+
+          <article class="pipeline-card">
+            <div class="pipeline-top">
+              <div class="step-meta">
+                <span class="step-badge">STEP 04</span>
+                <span class="step-tag">Packet Output</span>
+              </div>
+              <h3>Appeal Generation</h3>
+              <p>
+                Assembles matched codes, policy citations, and supporting clinical chart notes into a
+                structured internal appeal packet ready for biller review and submission.
+              </p>
+            </div>
+            <span class="step-output">→ Submission-Ready Packet</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="operational-focus">
+        <div class="focus-grid">
+          <div class="focus-panel">
+            <h2 class="eyebrow">Operational Focus</h2>
+            <p class="focus-copy">
+              Billing companies process claim denials daily through internal payer appeal channels.
+              Payer Delta automates this repetitive paperwork—ensuring every appeal includes the exact
+              codes, clinical chart notes, and policy citations required for swift reconsideration.
+            </p>
+            <p class="focus-sub">
+              Instead of forcing billing specialists to hunt across payer portals, PDF policy manuals,
+              and EHR attachments for every denied line item, Payer Delta prepares the complete appeal
+              record upfront so your team can review, approve, and submit at volume.
+            </p>
           </div>
-          <div class="photo-credit">JJ working on a client project</div>
+
+          <aside class="packet-spec" aria-label="Standard appeal packet contents">
+            <div class="packet-spec-title">Structured Appeal Packet Output</div>
+            <ul class="packet-list">
+              <li>
+                <span class="label">Claim &amp; Denial Matrix</span>
+                <span class="detail">CARC / RARC / CPT</span>
+              </li>
+              <li>
+                <span class="label">Payer Policy Citations</span>
+                <span class="detail">LCD / NCD / Commercial</span>
+              </li>
+              <li>
+                <span class="label">Assembled Chart Evidence</span>
+                <span class="detail">Indexed Encounter Notes</span>
+              </li>
+              <li>
+                <span class="label">Reconsideration Argument</span>
+                <span class="detail">Channel-Formatted</span>
+              </li>
+              <li>
+                <span class="label">Human Review Gate</span>
+                <span class="detail">Biller Sign-Off Ready</span>
+              </li>
+            </ul>
+          </aside>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <h2>Who it’s for</h2>
-      <div class="grid two">
-        <div class="card"><strong>AZ RCM and billing shops</strong><p>An outside payer-change watch so your team does not have to build and maintain one.</p></div>
-        <div class="card"><strong>Specialty clinic billing managers</strong><p>A standing watch on payer and pricing changes that can affect billing, auth, and collections.</p></div>
-        <div class="card"><strong>Independent hospital denials / RI</strong><p>A short brief a denials or revenue-integrity lead can actually open and use.</p></div>
-        <div class="card"><strong>Not for</strong><p>PHI. Claims processing. Replacing your billers. Full MRF dumps.</p></div>
-      </div>
-    </section>
+      <section id="teams">
+        <div class="section-header">
+          <h2 class="eyebrow">Where It Fits</h2>
+          <p class="section-title">Designed for high-volume medical billing and RCM operations.</p>
+        </div>
 
-    <section>
-      <h2>Price</h2>
-      <p class="price">Start with a free sample week. Ongoing: $297–$497 / month.</p>
-      <p class="lede" style="margin:0">Daily monitoring. Weekly brief. Cancel any Monday before the next send.</p>
-    </section>
+        <div class="grid-two">
+          <div class="card">
+            <strong>Medical Billing Companies</strong>
+            <p>Eliminate multi-client denial backlogs across internal payer appeal channels without adding manual appeal-writing overhead.</p>
+          </div>
+          <div class="card">
+            <strong>Specialty Group RCM Teams</strong>
+            <p>Standardize medical-necessity, modifier, and coding reconsiderations with traceable clinical documentation on every submission.</p>
+          </div>
+          <div class="card">
+            <strong>Hospital &amp; Health System Denials</strong>
+            <p>Compress turnaround from remittance denial to completed appeal packet while preserving audit-ready policy citations.</p>
+          </div>
+          <div class="card">
+            <strong>Human-Verified Execution</strong>
+            <p>Billing specialists remain in control of final payer submission—every generated packet surfaces its exact code, policy, and chart sources.</p>
+          </div>
+        </div>
+      </section>
 
-    <section>
-      <h2>How it works</h2>
-      <ul class="steps">
-        <li>I monitor the public sources.</li>
-        <li>I build the brief around the changes worth attention.</li>
-        <li>Your team decides what changes, if anything.</li>
-      </ul>
-    </section>
-
-    <section class="closing-section">
-      <h2>The point</h2>
-      <div class="closing-line">Catch the change before the claim does.</div>
-      <p class="closing-copy">
-        Payer Delta is a small, external layer of attention around the public sources that move your revenue cycle.
-        No new software for your team to learn. No PHI. No promise to replace the people already doing the work.
-        Just a regular brief that makes the changes easier to see.
-      </p>
-      <div class="actions">
-        <a class="btn btn-primary" href="mailto:realjjemail@gmail.com?subject=PD-AZ%20sample%20request">Request a sample brief</a>
-      </div>
-    </section>
+      <section class="closing-section">
+        <h2 class="eyebrow">Deploy in Your Pipeline</h2>
+        <div class="closing-line">Eliminate the denial backlog without multiplying paperwork.</div>
+        <p class="closing-copy">
+          Walk through how Payer Delta connects to your current remittance queue, maps payer policy
+          citations, and generates structured internal appeal packets for your billing team.
+        </p>
+        <div class="actions" style="margin-bottom: 0;">
+          <a class="btn btn-primary" href="mailto:realjjemail@gmail.com?subject=Payer%20Delta%20%E2%80%94%20Workflow%20Walkthrough">Request Workflow Walkthrough</a>
+          <a class="btn btn-ghost" href="https://calendar.app.google/TqcgNrw1Q7ddAnTF8" target="_blank" rel="noreferrer">Book 15 Minutes</a>
+        </div>
+      </section>
+    </main>
 
     <footer>
-      Arizona AI Advisors · Mesa, Arizona<br />
-      Public sources only. No PHI.
+      <div>Payer Delta · Healthcare RCM &amp; Operational Automation</div>
+      <div><a href="https://josephjilovec.com/portfolio/payer-delta" rel="noopener">Joseph Jilovec Venture Studio ↗</a></div>
     </footer>
   </div>
 </body>
