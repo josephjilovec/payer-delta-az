@@ -3,6 +3,15 @@
   const root = document.documentElement;
   root.classList.add('js');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const openLinkedDetail = () => {
+    let id;
+    try { id = decodeURIComponent(window.location.hash.slice(1)); } catch { return; }
+    if (!id) return;
+    const detail = document.getElementById(id)?.closest('details');
+    if (detail) detail.open = true;
+  };
+  openLinkedDetail();
+  window.addEventListener('hashchange', openLinkedDetail);
   const header = document.querySelector('.site-header');
   const updateHeader = () => { header.dataset.scrolled = String(window.scrollY > 35); };
   updateHeader();

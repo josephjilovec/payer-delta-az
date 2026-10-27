@@ -2,7 +2,7 @@
 
 [Public website](https://payerdelta.josephjilovec.com/) for independent denial recovery, revenue integrity, RCM workflow support, payer intelligence, and cash forecasting for Arizona specialty practices and billing teams.
 
-The homepage leads with the Free Denial Snapshot and commercial recovery offer. The continuing RCM and forecasting services have distinct sections. The recovery workspace and horizon explorer explain the service; neither contains client records, measured results, or a functioning claims portal.
+The homepage leads with commercial denial recovery and the Free Denial Snapshot. The snapshot, sample recovery workflow, and recovery fees appear before the optional after-recovery section, which groups RCM support, payer intelligence, and cash forecasting. The recovery workspace and horizon explorer explain the service; neither contains client records, measured results, or a functioning claims portal.
 
 ## Hosting
 
