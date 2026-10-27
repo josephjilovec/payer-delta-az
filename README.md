@@ -2,7 +2,7 @@
 
 [Public website](https://payerdelta.josephjilovec.com/) for independent denial recovery, revenue integrity, RCM workflow support, payer intelligence, and cash forecasting for Arizona specialty practices and billing teams.
 
-The homepage leads with the free S2 denial inventory review and commercial recovery offer. The continuing RCM and forecasting services have distinct sections. The recovery workspace and horizon explorer explain the service; neither contains client records, measured results, or a functioning claims portal.
+The homepage leads with the Free Denial Snapshot and commercial recovery offer. The continuing RCM and forecasting services have distinct sections. The recovery workspace and horizon explorer explain the service; neither contains client records, measured results, or a functioning claims portal.
 
 ## Hosting
 
@@ -13,7 +13,7 @@ Buildless HTML, CSS, and JavaScript. Compatible with the existing Vercel static 
 - `site.js`: mobile navigation, progressive scroll reveals, recovery stages, and accessible forecasting tabs.
 - `assets/`: responsive WebP images and image provenance.
 
-Contact actions open the existing email and calendar destinations. Initial inquiries request organizational context only; the site has no file upload, account, backend, tracking script, or claim-submission action. Actual intake and service delivery arrangements are established separately.
+Contact actions open the existing business-call booking link. The page does not publish a personal email address. Initial booking details request organizational context only; the site has no file upload, account, backend, tracking script, or claim-submission action. Actual intake and service delivery arrangements are established separately.
 
 ## Checks
 
