@@ -1,90 +1,107 @@
-/* Progressive enhancement for a synthetic, non-submitting document example. */
 (() => {
-  "use strict";
-  const nav = document.querySelector(".packet-nav");
-  if (!nav) return;
-  const links = [...nav.querySelectorAll("[data-stage]")];
-  const stages = links.map(link => link.dataset.stage);
-  const context = {
-    denial: {
-      title: "Identify the stalled cash.",
-      copy: "The denial arrives in your 835 remittance queue. High-volume billing teams lack the hours to research complex clinical necessity disputes, leaving cash unworked as the 180-day clock counts down.",
-      focus: "CO-16 Medical Necessity Denial",
-      status: "Initial Denial / Unworked Claim ($2,450.00)"
-    },
-    defense: {
-      title: "Substantiate with policy, not prose.",
-      copy: "We cross-reference the clinical encounter against exact payer Local Coverage Determinations (LCDs) and statutory billing guidelines, creating a defensible medical necessity packet with zero physician burden.",
-      focus: "Statutory & Clinical Substantiation",
-      status: "Turnkey Appeal Packet Ready for Review"
-    },
-    recovery: {
-      title: "Collect the cash. Pay on results.",
-      copy: "The payer overturns the wrongful denial. The recovered funds deposit directly into your practice bank account. We invoice our 22% contingency fee only after the money is collected.",
-      focus: "Cash Collected / 22% Contingency",
-      status: "Payment Overturned & Posted ($2,120.00)"
-    }
+  'use strict';
+  const root = document.documentElement;
+  root.classList.add('js');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const header = document.querySelector('.site-header');
+  const updateHeader = () => { header.dataset.scrolled = String(window.scrollY > 35); };
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('#main-nav');
+  const closeMenu = (restoreFocus = false) => {
+    toggle.setAttribute('aria-expanded', 'false');
+    nav.dataset.open = 'false';
+    document.body.classList.remove('menu-is-open');
+    if (restoreFocus) toggle.focus();
   };
-  nav.setAttribute("role", "tablist");
-  const horizontal = window.matchMedia("(max-width: 900px)");
-  const orientation = () => nav.setAttribute("aria-orientation", horizontal.matches ? "horizontal" : "vertical");
-  orientation(); horizontal.addEventListener("change", orientation);
-  links.forEach(link => {
-    const id = link.dataset.stage;
-    link.setAttribute("role", "tab");
-    link.setAttribute("aria-controls", id);
-    const page = document.getElementById(id);
-    if (!page) return;
-    page.setAttribute("role", "tabpanel");
-    page.tabIndex = 0;
-    page.setAttribute("aria-labelledby", link.id);
-    link.addEventListener("click", event => { event.preventDefault(); openStage(id); });
-    link.addEventListener("keydown", event => {
-      const index = stages.indexOf(id); let next;
-      if (["ArrowRight", "ArrowDown"].includes(event.key)) next = (index + 1) % stages.length;
-      else if (["ArrowLeft", "ArrowUp"].includes(event.key)) next = (index - 1 + stages.length) % stages.length;
-      else if (event.key === "Home") next = 0;
-      else if (event.key === "End") next = stages.length - 1;
-      if (next === undefined) return;
-      event.preventDefault(); openStage(stages[next]); links[next].focus();
-    });
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    nav.dataset.open = String(open);
+    document.body.classList.toggle('menu-is-open', open);
   });
-  function openStage(id, focusHeading = false, updateAddress = true) {
-    if (!stages.includes(id)) return;
-    links.forEach(link => {
-      const selected = link.dataset.stage === id;
-      link.setAttribute("aria-selected", String(selected));
-      link.tabIndex = selected ? 0 : -1;
-      const targetPanel = document.getElementById(link.dataset.stage);
-      if (targetPanel) {
-        targetPanel.hidden = !selected;
-      }
-    });
-    const note = context[id];
-    if (note) {
-      const titleEl = document.getElementById("context-title");
-      const copyEl = document.getElementById("context-copy");
-      const focusEl = document.getElementById("context-focus");
-      const statusEl = document.getElementById("section-status");
-      if (titleEl) titleEl.textContent = note.title;
-      if (copyEl) copyEl.textContent = note.copy;
-      if (focusEl) focusEl.textContent = note.focus;
-      if (statusEl) statusEl.textContent = "Stage " + (stages.indexOf(id) + 1) + " of 3 / " + note.status + ".";
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu()));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') closeMenu(true);
+    if (event.key === 'Tab' && toggle.getAttribute('aria-expanded') === 'true') {
+      const links = [...nav.querySelectorAll('a')];
+      const first = toggle, last = links[links.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     }
-    if (updateAddress) history.replaceState(null, "", "#" + id);
-    if (focusHeading) {
-      const headingEl = document.getElementById(id + "-title");
-      if (headingEl) headingEl.focus();
+  });
+  window.matchMedia('(min-width: 761px)').addEventListener('change', e => { if (e.matches) closeMenu(); });
+
+  if ('IntersectionObserver' in window) {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!reducedMotion.matches) {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      }), { threshold: 0.08, rootMargin: '0px 0px -25px 0px' });
+      reveals.forEach(el => {
+        if (el.getBoundingClientRect().top > window.innerHeight * 0.9) el.classList.add('will-reveal');
+        observer.observe(el);
+      });
     }
   }
-  document.querySelectorAll("[data-open]").forEach(link => link.addEventListener("click", event => {
-    const id = link.dataset.open;
-    if (stages.includes(id)) { event.preventDefault(); openStage(id, true); }
-  }));
-  window.addEventListener("hashchange", () => {
-    const id = location.hash.slice(1);
-    if (stages.includes(id)) openStage(id, false, false);
+
+  const steps = [...document.querySelectorAll('[data-story-step]')];
+  const storyLinks = [...document.querySelectorAll('[data-story-link]')];
+  const views = [...document.querySelectorAll('[data-case-view]')];
+  let activeStep = -1;
+  function activateStep(index) {
+    if (index === activeStep) return;
+    activeStep = index;
+    steps.forEach((step, i) => step.classList.toggle('active', i === index));
+    views.forEach((view, i) => { view.hidden = i !== index; });
+    storyLinks.forEach((link, i) => {
+      link.classList.toggle('active', i === index);
+      if (i === index) link.setAttribute('aria-current', 'step');
+      else link.removeAttribute('aria-current');
+    });
+  }
+  activateStep(0);
+  let queued = false;
+  function syncStory() {
+    queued = false;
+    if (window.matchMedia('(max-width: 760px)').matches) return;
+    const target = window.innerHeight * 0.45;
+    let index = 0;
+    steps.forEach((step, i) => { if (step.getBoundingClientRect().top <= target) index = i; });
+    activateStep(index);
+  }
+  const requestSync = () => { if (!queued) { queued = true; window.requestAnimationFrame(syncStory); } };
+  window.addEventListener('scroll', requestSync, { passive: true });
+  window.addEventListener('resize', requestSync, { passive: true });
+  storyLinks.forEach((link, index) => link.addEventListener('click', () => activateStep(index)));
+  syncStory();
+
+  const tabs = [...document.querySelectorAll('[data-horizon]')];
+  const marker = document.querySelector('#horizon-marker');
+  function setHorizon(tab, focus = false) {
+    tabs.forEach((item, index) => {
+      const selected = item === tab;
+      item.setAttribute('aria-selected', String(selected));
+      item.tabIndex = selected ? 0 : -1;
+      document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+      if (selected) marker.style.left = `${((index + 1) / 3) * 100}%`;
+    });
+    if (focus) tab.focus();
+  }
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => setHorizon(tab));
+    tab.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+      else if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = tabs.length - 1;
+      if (next !== undefined) { event.preventDefault(); setHorizon(tabs[next], true); }
+    });
   });
-  const initial = location.hash.slice(1);
-  openStage(stages.includes(initial) ? initial : "denial", false, false);
 })();

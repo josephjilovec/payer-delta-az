@@ -1,29 +1,22 @@
 # Payer Delta Arizona
 
-[Public website](https://payerdelta.josephjilovec.com/) presenting an independent, contingency-aligned denial recovery and revenue integrity service for Arizona specialty medical practices and surgery centers.
+[Public website](https://payerdelta.josephjilovec.com/) for independent denial recovery, revenue integrity, RCM workflow support, payer intelligence, and cash forecasting for Arizona specialty practices and billing teams.
 
-## Value Proposition & Commercial Model
+The homepage leads with the free S2 denial inventory review and commercial recovery offer. The continuing RCM and forecasting services have distinct sections. The recovery workspace and horizon explorer explain the service; neither contains client records, measured results, or a functioning claims portal.
 
-Payer Delta Arizona recovers stalled, un-appealed commercial and Medicare denials for medical practices and Ambulatory Surgery Centers (ASCs) approaching their 180-day statutory filing deadlines.
+## Hosting
 
-- **Primary Entry Point:** Free S2 Statutory Denial Inventory Snapshot (48-hour turn on redacted 835 remittance data or denial CSV).
-- **Commercial Claims:** Pure 22% contingency fee — invoiced only after overturned funds are collected by the practice.
-- **Medicare Claims:** $95 flat administrative fee.
-- **Preventative Revenue Integrity:** Continuous policy surveillance and pre-billing modifier verification available as a monthly enterprise partnership ($1,500 – $3,500/month).
+Buildless HTML, CSS, and JavaScript. Compatible with the existing Vercel static deployment; no dependency installation or build command is required. Serve this directory as the site root. The canonical URL is `https://payerdelta.josephjilovec.com/`.
 
-## Architecture & Public Presentation
+- `index.html`: page structure, service copy, metadata, and contact links.
+- `styles.css`: responsive layouts, sticky recovery story, image treatments, and reduced-motion support.
+- `site.js`: mobile navigation, progressive scroll reveals, recovery stages, and accessible forecasting tabs.
+- `assets/`: responsive WebP images and image provenance.
 
-A responsive, high-performance static HTML/CSS/JavaScript experience:
-1. **Above-the-fold Offer:** Free S2 Denial Snapshot callout and contingency value proposition.
-2. **3-Stage Outcome Flow:**
-   - *Stage 01:* Automated S2 Denial Inventory (Isolating unworked denials and statutory countdowns).
-   - *Stage 02:* Statutory & Policy Substantiation (Independent research against Noridian LCDs, NCDs, and commercial medical necessity rules).
-   - *Stage 03:* Turnkey Human Review & Cash Recovery (Assembled appeal packets delivered to billing teams for sign-off; cash deposited directly to practice).
-3. **Interactive Case Study:** 3-tab real-world overturn walkthrough demonstrating a $2,120 recovery on CPT 64483 / CO-16 without revealing internal proprietary pipeline code or prompt structures.
+Contact actions open the existing email and calendar destinations. Initial inquiries request organizational context only; the site has no file upload, account, backend, tracking script, or claim-submission action. Actual intake and service delivery arrangements are established separately.
 
-## Verification & Deployment
+## Checks
 
-- Validated HTML semantics and accessible ARIA tab patterns.
-- Tested keyboard navigation (`ArrowRight`, `ArrowLeft`, `Home`, `End`).
-- `node -c site.js` verified with zero errors.
-- Fully static, deployable to Cloudflare Pages, Vercel, or any standard HTTP host.
+`node --check site.js` checks JavaScript syntax. Verify the mobile menu, Escape and keyboard focus behavior, forecasting tab Arrow/Home/End keys, responsive overflow, image loading, and reduced-motion behavior in a browser after changes. The site remains readable without JavaScript.
+
+Commercial recovery and Medicare administrative preparation are presented separately. Filing windows depend on payer/product/stage. Any future outcome or case-study claim needs supporting evidence and permission before publication.
