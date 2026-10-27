@@ -6,3 +6,23 @@
 /* Keep document references and status labels legible at narrow widths. */
 .paper-head,.paper-foot{font-size:10px}.paper-foot span:first-child{max-width:170px}.margin-kicker,.packet-margin dt,.note-index{font-size:10px}.packet-margin dd{font-size:12px}.packet-margin .margin-small{font-size:11px}.packet-nav a{font-size:12px}.packet-nav a small{font-size:10px}.packet-nav a>span:first-child{font-size:10px}.record-fields dt{font-size:11px}.record-fields dd,.draft-body p{font-size:13px}.paper-note p{font-size:12px}.check-state{font-size:10px}.document-checklist div>span{font-size:12px}.document-checklist strong{font-size:13px}.paper-link{font-size:12px}.draft-body h4{font-size:13px}.review-questions{font-size:13px}.paper-lede{font-size:14px}.review-status p{font-size:12px}.file-cover span:first-child{font-size:11px}.file-state{font-size:10px}
 @media(max-width:650px){.paper-head,.paper-foot{font-size:9px}.paper-foot span:first-child{max-width:120px}.packet-nav a{font-size:11px}.packet-nav a small{font-size:10px}.packet-nav a>span:first-child{font-size:9px}.paper-note p,.draft-body p,.review-questions,.record-fields dd{font-size:12px}.paper-link{font-size:11px}.paper-lede{font-size:13px}.hero .eyebrow{font-size:9px}.edition{font-size:8px}.file-cover span:first-child{font-size:10px}.section-status{font-size:10px}}
+
+
+/* Payer Delta Arizona: Outcome Flow & Free S2 Snapshot Styles */
+.hero-trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:24px;font-size:11px;color:#90c5b9;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.snapshot-banner{margin-top:35px;margin-bottom:60px;background:linear-gradient(135deg,rgba(32,62,59,.7) 0%,rgba(16,30,37,.95) 100%);border:1px solid #90c5b9;border-radius:10px;padding:38px 42px;box-shadow:0 14px 40px rgba(0,0,0,.45)}
+.snapshot-header h2{font-size:clamp(28px,3.2vw,40px);color:#f7f5e9;margin:8px 0 12px}
+.snapshot-header p{color:#d5dfd6;font-size:16px;line-height:1.6;max-width:850px}
+.snapshot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:32px 0 34px}
+.snapshot-point{background:rgba(7,14,18,.55);border:1px solid rgba(144,197,185,.2);padding:22px 22px;border-radius:8px}
+.snapshot-point strong{display:block;color:var(--gold);font-size:15px;margin-bottom:8px}
+.snapshot-point p{font-size:13px;color:#c1ceca;line-height:1.6;margin:0}
+.snapshot-actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+@media(max-width:900px){.snapshot-grid{grid-template-columns:1fr;gap:16px}.snapshot-banner{padding:26px 20px}}
+
+.outcome-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:35px}
+.outcome-step{background:rgba(16,30,37,.6);border:1px solid var(--line);border-radius:8px;padding:28px 24px}
+.outcome-step .step-num{display:inline-block;font:10px/1.4 ui-monospace,monospace;letter-spacing:.12em;color:var(--gold);margin-bottom:12px;background:rgba(210,180,124,.12);padding:3px 8px;border-radius:4px}
+.outcome-step h3{font-size:22px;color:#f7f5e9;margin-bottom:12px;line-height:1.25}
+.outcome-step p{font-size:14px;color:#b8c5c2;line-height:1.6;margin:0}
+@media(max-width:850px){.outcome-steps{grid-template-columns:1fr;gap:18px}}

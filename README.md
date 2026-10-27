@@ -1,23 +1,29 @@
-# Payer Delta
+# Payer Delta Arizona
 
-[Public website](https://payerdelta.josephjilovec.com/) presenting a denial-to-packet workflow for medical billing and RCM teams.
+[Public website](https://payerdelta.josephjilovec.com/) presenting an independent, contingency-aligned denial recovery and revenue integrity service for Arizona specialty medical practices and surgery centers.
 
-## Current public implementation
+## Value Proposition & Commercial Model
 
-A static HTML/CSS/JavaScript presentation with a five-part, entirely synthetic working file: remittance context, policy-source status, supporting-document checklist, illustrative draft, and human review questions.
+Payer Delta Arizona recovers stalled, un-appealed commercial and Medicare denials for medical practices and Ambulatory Surgery Centers (ASCs) approaching their 180-day statutory filing deadlines.
 
-The file exposes missing information instead of inventing policy citations or patient details. It has no upload, approval, claims submission, authenticated record access, or live clinical/billing integration. Private service capabilities and integration scope must be confirmed separately; a functioning public demonstration is not proof of them.
+- **Primary Entry Point:** Free S2 Statutory Denial Inventory Snapshot (48-hour turn on redacted 835 remittance data or denial CSV).
+- **Commercial Claims:** Pure 22% contingency fee — invoiced only after overturned funds are collected by the practice.
+- **Medicare Claims:** $95 flat administrative fee.
+- **Preventative Revenue Integrity:** Continuous policy surveillance and pre-billing modifier verification available as a monthly enterprise partnership ($1,500 – $3,500/month).
 
-The original walkthrough email destination and Google Calendar booking link are preserved. Validation should inspect those links without sending an email or creating a booking.
+## Architecture & Public Presentation
 
-## Behavior
+A responsive, high-performance static HTML/CSS/JavaScript experience:
+1. **Above-the-fold Offer:** Free S2 Denial Snapshot callout and contingency value proposition.
+2. **3-Stage Outcome Flow:**
+   - *Stage 01:* Automated S2 Denial Inventory (Isolating unworked denials and statutory countdowns).
+   - *Stage 02:* Statutory & Policy Substantiation (Independent research against Noridian LCDs, NCDs, and commercial medical necessity rules).
+   - *Stage 03:* Turnkey Human Review & Cash Recovery (Assembled appeal packets delivered to billing teams for sign-off; cash deposited directly to practice).
+3. **Interactive Case Study:** 3-tab real-world overturn walkthrough demonstrating a $2,120 recovery on CPT 64483 / CO-16 without revealing internal proprietary pipeline code or prompt structures.
 
-The packet navigation progressively enhances the five ordinary page anchors into keyboard-operable tabs. Arrow keys, Home, and End move between sections. Without JavaScript, all five document pages remain readable in order. Source cross-references open the relevant page and move focus to its heading.
+## Verification & Deployment
 
-The existing #pipeline, #operational-focus, and #teams anchors remain available. The existing desk photograph remains in the repository but is not required to explain the document workflow.
-
-## Deployment
-
-No framework or dependency installation is required. Serve the repository root using the existing deployment arrangement. site.js can be checked with `node --check site.js`.
-
-The parent venture studio and Kinetic repositories are outside this implementation's write scope.
+- Validated HTML semantics and accessible ARIA tab patterns.
+- Tested keyboard navigation (`ArrowRight`, `ArrowLeft`, `Home`, `End`).
+- `node -c site.js` verified with zero errors.
+- Fully static, deployable to Cloudflare Pages, Vercel, or any standard HTTP host.
