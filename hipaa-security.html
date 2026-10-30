@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142c2b">
+  <title>HIPAA Compliance &amp; Data Security Protocol — Payer Delta Arizona</title>
+  <meta name="description" content="Payer Delta Arizona's HIPAA compliance, dual-track data security architecture, Safe Harbor de-identification standards, and BAA protocols for specialty medical practices.">
+  <link rel="canonical" href="https://payerdelta.josephjilovec.com/hipaa-security">
+  <link rel="icon" href="/payer-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/site.js" defer></script>
+</head>
+<body class="legal-document">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol><symbol id="north-east" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol><symbol id="delta" viewBox="0 0 40 40"><path d="M20 5 37 35H3L20 5Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 18 29 35" fill="none" stroke="currentColor" stroke-width="2"/></symbol></defs></svg>
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Payer Delta Arizona home"><svg aria-hidden="true"><use href="#delta"/></svg><span>PAYER DELTA<small>ARIZONA</small></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span class="menu-label">Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="/#snapshot">Free snapshot</a><a href="/#recovery">How recovery works</a><a href="/#after-recovery">After recovery</a>
+        <a class="nav-cta" href="/#start">Book a 15-minute call <svg aria-hidden="true"><use href="#north-east"/></svg></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="legal-header">
+      <div class="container">
+        <div class="section-label"><span class="small-cross" aria-hidden="true">+</span> HEALTHCARE DATA GOVERNANCE</div>
+        <h1>HIPAA &amp; Security <em>Protocol</em></h1>
+        <div class="legal-meta">
+          <span>STATUTORY FRAMEWORK: 45 C.F.R. PARTS 160 &amp; 164</span>
+          <span>ARIZONA LAW: A.R.S. § 12-2297</span>
+          <span>DOCUMENT REF: SOP-PD-AZ-003</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="container legal-layout">
+      <aside class="legal-nav-aside" aria-label="HIPAA Security Protocol Sections">
+        <h3>Contents</h3>
+        <ul>
+          <li><a href="#dual-track">1. Dual-Track Governance</a></li>
+          <li><a href="#track-one">2. Track 1: Zero-PHI Safe Harbor</a></li>
+          <li><a href="#track-two">3. Track 2: Contracted BAA Mode</a></li>
+          <li><a href="#tokenization">4. Cryptographic Patient Tokenization</a></li>
+          <li><a href="#encryption">5. Technical Safeguards &amp; Ciphers</a></li>
+          <li><a href="#retention">6. Records Retention &amp; Destruction</a></li>
+          <li><a href="#regulatory-firewalls">7. Arizona Statutory Boundaries</a></li>
+          <li><a href="#security-inquiries">8. Compliance Desk Contact</a></li>
+        </ul>
+      </aside>
+
+      <article class="legal-content">
+        <section id="dual-track">
+          <h2>1. Dual-Track Healthcare Governance Architecture</h2>
+          <p>Healthcare providers operating in Arizona face rigorous compliance standards regarding patient confidentiality and protected health information (PHI). To completely eliminate regulatory friction while ensuring total data integrity, <strong>Payer Delta Arizona</strong> operates under a bifurcated <strong>Dual-Track Security Architecture</strong>:</p>
+
+          <table class="legal-table">
+            <thead>
+              <tr>
+                <th>Security Dimension</th>
+                <th>Track 1: Zero-PHI Operating Mode</th>
+                <th>Track 2: HIPAA BAA Operating Mode</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Primary Scope</strong></td>
+                <td>Public website, exploratory inquiries, Free Denial Snapshots, preliminary feasibility.</td>
+                <td>Active commercial recovery engagements, appeal packet assembly, cash forecasting.</td>
+              </tr>
+              <tr>
+                <td><strong>Statutory Standard</strong></td>
+                <td>Safe Harbor De-Identification (45 C.F.R. § 164.514(b))</td>
+                <td>Full Business Associate Agreement (45 C.F.R. § 164.504(e))</td>
+              </tr>
+              <tr>
+                <td><strong>Data Ingestion</strong></td>
+                <td>Strictly scrubbed remittances (CPT/HCPCS, CARC/RARC, amounts, payer names).</td>
+                <td>Encrypted ePHI transferred via verified secure encrypted channels.</td>
+              </tr>
+              <tr>
+                <td><strong>EHR Access</strong></td>
+                <td>Zero EHR or clearinghouse credentials requested or accepted.</td>
+                <td>Direct integration or secure batch export under strict Role-Based Access Controls.</td>
+              </tr>
+              <tr>
+                <td><strong>Regulatory Risk</strong></td>
+                <td>Zero PHI exposure or transmission risk for prospective practices.</td>
+                <td>Institutional-grade audit trails, tokenization, and statutory compliance.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="track-one">
+          <h2>2. Track 1: Zero-PHI Safe Harbor Operating Mode</h2>
+          <p>Used exclusively for initial consultations and complimentary 1-page S2 Denial Snapshots. This mode allows practices to evaluate recovery yield without executing legal agreements upfront:</p>
+          <div class="legal-callout warning">
+            <h4>Mandatory 18 HIPAA Identifiers Scrubbing</h4>
+            <p>Prior to ingestion in Track 1, all 18 personal identifiers defined under 45 C.F.R. § 164.514(b) must be scrubbed: patient names, geographical subdivisions (addresses, ZIP codes), all dates directly related to the individual (birth dates, admission dates), contact details (phone, email, fax), Social Security Numbers, Medical Record Numbers, Health Plan Beneficiary Numbers, account numbers, and biometric identifiers.</p>
+          </div>
+          <p>Only non-clinical transactional fields are analyzed: procedure codes, denial remark codes, billed charges, allowed amounts, and payer identification.</p>
+        </section>
+
+        <section id="track-two">
+          <h2>3. Track 2: HIPAA BAA Operating Mode (Active Clients)</h2>
+          <p>Prior to receiving any identifiable clinical records or electronic Protected Health Information (ePHI), Payer Delta executes a formal, mutual <strong>HIPAA Business Associate Agreement (BAA)</strong> pursuant to 45 C.F.R. § 160.103 and 45 C.F.R. § 164.504(e).</p>
+          <p>Under our BAA, Payer Delta warrants that it:</p>
+          <ul>
+            <li>Implements appropriate administrative, physical, and technical safeguards to prevent unauthorized use or disclosure of ePHI.</li>
+            <li>Restricts internal access strictly to authorized personnel with direct operational need.</li>
+            <li>Maintains an immutable breach notification procedure guaranteeing reporting to the Covered Entity within statutory deadlines.</li>
+            <li>Mandates that all subcontractors and secure infrastructure vendors adhere to identical BAA requirements.</li>
+          </ul>
+        </section>
+
+        <section id="tokenization">
+          <h2>4. Cryptographic Patient Tokenization</h2>
+          <p>To insulate patient identities during technical analysis while preserving deterministic auditability for the practice's billing team:</p>
+          <div class="legal-callout security">
+            <h4>Salted Cryptographic ID Allocation</h4>
+            <p>Identifiable patient records are ingested into an isolated, ephemeral memory buffer. The pipeline assigns a salted SHA-256 cryptographic token (e.g., <code>BAA-PT-8F4C2E91</code>) cross-referenced to the practice's internal account identifier. All secondary research, policy mapping, and crosswalk drafting reference this token, ensuring raw patient names are never exposed across intermediate research tools.</p>
+          </div>
+        </section>
+
+        <section id="encryption">
+          <h2>5. Technical Safeguards &amp; Ciphers</h2>
+          <p>In accordance with 45 C.F.R. § 164.312, Payer Delta enforces strict cryptographic standards across all operational infrastructure:</p>
+          <ul>
+            <li><strong>Data in Transit:</strong> All web endpoints, API webhooks, and file transfers mandate TLS 1.3 encryption with modern forward secrecy cipher suites and HTTP Strict Transport Security (HSTS) preloading.</li>
+            <li><strong>Data at Rest:</strong> Local analytical databases, run manifests, and working appeal packets are encrypted using AES-256 cipher blocks.</li>
+            <li><strong>Workstation Hardening:</strong> All analytical hardware maintains full-disk encryption (LUKS / FileVault) with mandatory multi-factor authentication (MFA) and automated inactivity timeouts.</li>
+            <li><strong>Zero Public Commits:</strong> Production PHI is strictly barred from public source repositories or unencrypted consumer cloud drives.</li>
+          </ul>
+        </section>
+
+        <section id="retention">
+          <h2>6. Records Retention &amp; Cryptographic Destruction</h2>
+          <p>Pursuant to Arizona Revised Statutes (A.R.S. § 12-2297) and federal HIPAA regulations (45 C.F.R. § 164.316(b)(2)):</p>
+          <ol>
+            <li><strong>6-Year Statutory Retention:</strong> All compliance records, signed BAAs, audit logs, and appeal evidence manifests are retained for a statutory period of <strong>six (6) years</strong> from creation date or the date of last activity.</li>
+            <li><strong>Cryptographic Media Sanitization:</strong> Upon expiration of statutory retention or upon formal client termination, client ePHI is securely destroyed in accordance with <strong>NIST Special Publication 800-88 Revision 1 (Guidelines for Media Sanitization)</strong> standards.</li>
+          </ol>
+        </section>
+
+        <section id="regulatory-firewalls">
+          <h2>7. Arizona Statutory Boundaries &amp; Licensing Status</h2>
+          <p>Operating a commercial revenue integrity and denial recovery service in Arizona does not require an independent state billing license, provided statutory firewalls are maintained:</p>
+          <ul>
+            <li><strong>Third-Party Administrator (TPA) Exemption (A.R.S. § 20-485):</strong> Payer Delta does not collect insurance premiums, does not adjust or settle claims on behalf of insurers, and does not hold fiduciary control over insurance payouts. Services are provided strictly as an administrative vendor to providers; therefore, no TPA license is required.</li>
+            <li><strong>Collection Agency Exemption (A.R.S. § 32-1001 et seq.):</strong> Payer Delta strictly works commercial insurance disputes between practices and insurance payers. We never contact patients, collect consumer balances, or pursue individuals; therefore, no collection agency license is required.</li>
+            <li><strong>Practice Signature Ownership:</strong> Final clinical evaluation, provider signature, and formal submission authority remain exclusively with the licensed healthcare provider.</li>
+          </ul>
+        </section>
+
+        <section id="security-inquiries">
+          <h2>8. Security Desk &amp; Compliance Inquiries</h2>
+          <p>To request our standard HIPAA BAA template, review SOC-aligned security policies, or coordinate an encrypted intake transfer, contact our compliance office:</p>
+          <div class="legal-callout">
+            <p><strong>Payer Delta Arizona — HIPAA Privacy &amp; Security Desk</strong><br>
+            Attn: Security Officer<br>
+            1155 S Power Rd, Ste 114 #595<br>
+            Mesa, AZ 85206<br>
+            Direct: <a href="mailto:compliance@payerdelta.com">compliance@payerdelta.com</a></p>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="brand" href="/" aria-label="Payer Delta Arizona home"><svg aria-hidden="true"><use href="#delta"/></svg><span>PAYER DELTA<small>ARIZONA</small></span></a>
+        <p>Commercial denial recovery in Arizona.</p>
+        <a class="footer-contact" href="https://calendar.app.google/TqcgNrw1Q7ddAnTF8" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call with Payer Delta Arizona <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="footer-middle">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/#snapshot">Free Denial Snapshot</a></li>
+            <li><a href="/#recovery">Commercial Denial Recovery (22%)</a></li>
+            <li><a href="/#pricing">Medicare Packet Preparation</a></li>
+            <li><a href="/#after-recovery">Revenue Integrity &amp; RCM</a></li>
+            <li><a href="/#forecasting">Cash Outlook &amp; Forecasting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Compliance &amp; Governance</h4>
+          <ul>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/hipaa-security">HIPAA &amp; Data Security</a></li>
+            <li><a href="/#faq">Provider Submission Safeguards</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Practice Location</h4>
+          <p class="footer-address">
+            1155 S Power Rd, Ste 114 #595<br>
+            Mesa, AZ 85206<br>
+            Maricopa County, Arizona
+          </p>
+          <p class="footer-contact-info">
+            Initial inquiries: <a href="https://calendar.app.google/TqcgNrw1Q7ddAnTF8" target="_blank" rel="noopener noreferrer">Introductory Call</a><br>
+            Compliance: <span class="mono-contact">compliance@payerdelta.com</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Payer Delta Arizona. All rights reserved.</span>
+        <div class="footer-legal-links">
+          <a href="/privacy">Privacy Policy</a>
+          <span aria-hidden="true">&bull;</span>
+          <a href="/terms">Terms of Service</a>
+          <span aria-hidden="true">&bull;</span>
+          <a href="/hipaa-security">HIPAA &amp; Security</a>
+        </div>
+      </div>
+      <span class="footer-disclaimer">Illustrative imagery. No client facilities or personnel shown. Administrative denial recovery analytics and appeal packet drafting. Final clinical review, signature, and submission authority remain exclusively with the licensed healthcare provider.</span>
+    </div>
+  </footer>
+</body>
+</html>

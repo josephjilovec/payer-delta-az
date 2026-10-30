@@ -35,3 +35,318 @@
 @media(max-width:900px){.recovery-led .hero-copy{padding-top:55px;padding-bottom:45px}.recovery-led .hero h1{font-size:clamp(58px,8vw,77px)}.recovery-led .hero-bottom>p{max-width:410px}}
 @media(max-width:760px){.recovery-led .hero-copy{max-width:none;padding-top:40px;padding-bottom:36px}.recovery-led .hero h1{font-size:clamp(32px,7.8vw,58px);line-height:1.06}.recovery-led .hero-copy>p{font-size:16px;line-height:1.65;max-width:100%}.recovery-led .hero-bottom>p{max-width:none;font-size:11px}.recovery-led .hero-bottom>p>span{display:inline;font-size:inherit}.recovery-led .chapter-inner>a{gap:6px;font-size:12px;padding-inline:14px}.snapshot-intro .snapshot-first-step{font-size:16px}.snapshot-booking .button{font-size:12px;gap:20px}.after-recovery-section .display-heading{font-size:clamp(40px,7.2vw,52px)}.after-forecast-intro{font-size:13px}}
 @media(max-width:380px){.recovery-led .hero h1{font-size:29px}.recovery-led .hero-copy>p{font-size:15px}.recovery-led .hero-bottom>p{font-size:10px}.snapshot-booking .button{padding-inline:16px;gap:16px}.after-recovery-section .forecast-tabs button{padding-inline:5px;font-size:32px}}
+
+
+/* ==========================================================================
+   Payer Delta Arizona — Legal, Privacy & Compliance Layout
+   ========================================================================== */
+.legal-header {
+  background: var(--ink-deep);
+  color: var(--white);
+  padding-top: 140px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.legal-header .section-label {
+  color: var(--sage);
+  margin-bottom: 16px;
+}
+
+.legal-header h1 {
+  font-size: clamp(38px, 4.2vw, 64px);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  margin-bottom: 18px;
+}
+
+.legal-header h1 em {
+  color: #f0eddb;
+}
+
+.legal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #b8c7b7;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legal-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  padding-block: 70px 110px;
+  align-items: start;
+}
+
+.legal-nav-aside {
+  position: sticky;
+  top: 120px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 24px;
+}
+
+.legal-nav-aside h3 {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.legal-nav-aside ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legal-nav-aside a {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.4;
+  transition: color 0.2s;
+  display: block;
+}
+
+.legal-nav-aside a:hover {
+  color: #2b4940;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-content {
+  max-width: 860px;
+}
+
+.legal-content section {
+  margin-bottom: 50px;
+  scroll-margin-top: 120px;
+}
+
+.legal-content h2 {
+  font-size: 28px;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.legal-content h3 {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 24px 0 10px;
+}
+
+.legal-content p {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #334441;
+  margin-bottom: 18px;
+}
+
+.legal-content ul, .legal-content ol {
+  margin: 0 0 20px 20px;
+  padding: 0;
+  color: #334441;
+}
+
+.legal-content li {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.legal-callout {
+  background: var(--white);
+  border-left: 4px solid var(--ink);
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 22px 24px;
+  margin: 28px 0;
+}
+
+.legal-callout.warning {
+  border-left-color: #c97a2b;
+  background: #fdfaf6;
+}
+
+.legal-callout.security {
+  border-left-color: #2b4940;
+  background: #f7faf7;
+}
+
+.legal-callout h4 {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.legal-callout p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 14px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.legal-table th, .legal-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.legal-table th {
+  background: #ece9df;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.legal-table td strong {
+  color: var(--ink);
+}
+
+/* Footer Navigation Grid */
+.footer-middle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid #ffffff24;
+}
+
+.footer-col h4 {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 18px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col a {
+  font-size: 13px;
+  color: #c8d5bd;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-address {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #c8d5bd;
+  margin-bottom: 14px;
+}
+
+.footer-contact-info {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #94aa9a;
+}
+
+.footer-contact-info a {
+  color: var(--sage);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.mono-contact {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--white);
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+}
+
+.footer-legal-links a {
+  color: #c8d5bd;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.footer-legal-links a:hover {
+  color: var(--white);
+}
+
+.footer-disclaimer {
+  display: block;
+  font-size: 9.5px;
+  line-height: 1.6;
+  color: #7b8e84;
+  margin-top: 14px;
+  text-align: left;
+}
+
+@media(max-width: 900px) {
+  .legal-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .legal-nav-aside {
+    position: static;
+    top: auto;
+  }
+  .footer-middle {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 600px) {
+  .footer-middle {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .legal-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
