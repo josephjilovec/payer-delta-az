@@ -113,4 +113,55 @@
       if (next !== undefined) { event.preventDefault(); setHorizon(tabs[next], true); }
     });
   });
+
+  // Denial Recovery Intake Message Form Handling
+  const intakeForm = document.getElementById('denial-intake-form');
+  const intakeSuccess = document.getElementById('intake-success');
+  const intakeResetBtn = document.getElementById('intake-reset-btn');
+
+  if (intakeForm && intakeSuccess) {
+    intakeForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const submitBtn = intakeForm.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Transmitting Message...';
+      }
+
+      const practice = intakeForm.querySelector('#intake-practice')?.value || '';
+      const contact = intakeForm.querySelector('#intake-contact')?.value || '';
+      const backlog = intakeForm.querySelector('#intake-backlog')?.value || '';
+      const message = intakeForm.querySelector('#intake-message')?.value || '';
+
+      const subject = encodeURIComponent(`Payer Delta Recovery Inquiry — ${practice}`);
+      const body = encodeURIComponent(
+        `Inbound Denial Recovery Inquiry for Payer Delta Arizona:\n\n` +
+        `Practice / Name: ${practice}\n` +
+        `Email or Direct Phone: ${contact}\n` +
+        `Estimated Denial Backlog / Payers: ${backlog}\n\n` +
+        `Message:\n${message}\n\n` +
+        `Sent from https://payerdelta.josephjilovec.com/`
+      );
+
+      setTimeout(() => {
+        intakeForm.style.display = 'none';
+        intakeSuccess.style.display = 'block';
+        window.location.href = `mailto:hello@josephjilovec.com?subject=${subject}&body=${body}`;
+      }, 500);
+    });
+
+    if (intakeResetBtn) {
+      intakeResetBtn.addEventListener('click', () => {
+        intakeForm.reset();
+        intakeSuccess.style.display = 'none';
+        intakeForm.style.display = 'block';
+        const submitBtn = intakeForm.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Send Message &amp; Request Recovery Intake</span><svg aria-hidden="true"><use href="#north-east"/></svg>';
+        }
+      });
+    }
+  }
 })();
